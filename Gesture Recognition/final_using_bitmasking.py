@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 import math
 
-
 cap = cv2.VideoCapture(0)
 while(cap.isOpened()):
     # read image
@@ -18,10 +17,7 @@ while(cap.isOpened()):
     cv2.imshow('threshnow1',thresh1)
     image, contours, hierarchy = cv2.findContours(thresh1.copy(), \
                cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    #cnt = max(contours, key = lambda x: cv2.contourArea(x)) 
-	#center
-	#dist=cv2.distanceTransform(thresh1,cv2.DIST_L2,5)
-    #x, y, w, h = cv2.boundingRect(cnt)
+    
     thresh3=cv2.resize(thresh1,(249,199))
     cv2.imshow('final blur',blur)
 	#cv2.imshow('thresh3',thresh3)
